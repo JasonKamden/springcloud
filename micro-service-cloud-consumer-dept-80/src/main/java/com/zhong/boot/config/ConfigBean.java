@@ -15,9 +15,9 @@ public class ConfigBean {
         return new RestTemplate();
     }
 
-    @Bean
-    public IRule myRule() {
-        //RandomRule为随机策略
-        return new RandomRule();
-    }
+//    @Bean
+//    public IRule myRule() {
+//        //RandomRule为随机策略
+//        return new RandomRule();
+//    }
 }

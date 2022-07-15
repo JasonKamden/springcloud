@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -29,5 +30,17 @@ public class DeptController {
     @RequestMapping(value = "dept/list", method = RequestMethod.GET)
     public List<Dept> list() {
         return deptService.selectAll();
+    }
+
+    //超时测试,该服务的响应时间为 5 秒
+    @RequestMapping(value = "/dept/feign/timeout")
+    public String DeptFeignTimeout() {
+        //暂停 5 秒
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }
