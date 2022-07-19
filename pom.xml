@@ -7,13 +7,14 @@
     <modules>
         <module>micro-service-cloud-api</module>
         <module>micro-service-cloud-consumer-dept-80</module>
+        <module>micro-service-cloud-consumer-dept-feign</module>
         <module>micro-service-cloud-eureka-7001</module>
         <module>micro-service-cloud-eureka-7002</module>
         <module>micro-service-cloud-eureka-7003</module>
         <module>micro-service-cloud-provider-dept-8001</module>
         <module>micro-service-cloud-provider-dept-8002</module>
         <module>micro-service-cloud-provider-dept-8003</module>
-        <module>micro-service-cloud-consumer-dept-feign</module>
+        <module>micro-service-cloud-provider-dept-hystrix-8004</module>
     </modules>
 
     <parent>
@@ -32,8 +33,6 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
@@ -53,6 +52,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <finalName>microservicecloud</finalName>
         <resources>
@@ -61,6 +61,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -72,5 +73,6 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 </project>
